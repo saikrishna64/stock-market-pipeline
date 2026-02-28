@@ -7,3 +7,6 @@ apscheduler
 pytest
 python-dotenv
 psycopg2-binary
+matplotlib
+requests
+streamlit-searchbox
