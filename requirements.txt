@@ -1,0 +1,9 @@
+pandas
+sqlalchemy
+yfinance
+plotly
+streamlit
+apscheduler
+pytest
+python-dotenv
+psycopg2-binary
