@@ -31,25 +31,56 @@ main.py (APScheduler)    ← runs entire pipeline daily at 4:05 PM EST
 
 ## 🚀 Getting Started
 
+### Prerequisites
+- Python 3.10+
+- Git
+
+### Installation
+
+**1. Clone the repository**
 ```bash
-# 1. Clone and set up environment
-git clone https://github.com/yourusername/stock_pipeline.git
-cd stock_pipeline
-python -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
-
-# 2. Configure environment
-cp .env.example .env
-
-# 3. Run pipeline once to load data
-python main.py --now
-
-# 4. Launch dashboard
-streamlit run dashboard/app.py
-
-# 5. Run tests
-pytest tests/
+git clone https://github.com/saikrishna64/stock-market-pipeline.git
+cd stock-market-pipeline
 ```
+
+**2. Create virtual environment**
+```bash
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Mac/Linux
+source venv/bin/activate
+```
+
+**3. Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**4. Run the pipeline** (fetches 6 months of NSE stock data)
+```bash
+python main.py --now
+```
+
+**5. Launch the dashboard**
+```bash
+streamlit run dashboard/app.py
+```
+
+Open your browser at `http://localhost:8501` 🎉
+
+### Running Tests
+```bash
+pytest tests/ -v
+```
+
+### Scheduling Automatic Daily Runs
+```bash
+python main.py
+```
+This starts the scheduler — pipeline runs automatically every day at 4:05 PM IST after NSE market close.
 
 ## 📊 Dashboard Features
 
