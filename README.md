@@ -17,7 +17,7 @@ storage/db.py            ← incremental upsert to SQLite / PostgreSQL
      ↓
 dashboard/app.py         ← Streamlit + Plotly interactive dashboard
      ↓
-main.py (APScheduler)    ← runs entire pipeline daily at 4:05 PM EST
+main.py (APScheduler)    ← runs entire pipeline daily at 4:05 PM IST
 ```
 
 ## 🛠️ Tech Stack
@@ -92,7 +92,7 @@ This starts the scheduler — pipeline runs automatically every day at 4:05 PM I
 
 ## 🔄 Automation
 
-The pipeline runs automatically every weekday at 4:05 PM EST (after NYSE close) using APScheduler. All runs are logged to `logs/pipeline.log`.
+The pipeline runs automatically every weekday at 4:05 PM EST (after NSE close) using APScheduler. All runs are logged to `logs/pipeline.log`.
 
 ## 📁 Project Structure
 
