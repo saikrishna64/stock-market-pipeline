@@ -2,7 +2,7 @@ pandas
 sqlalchemy
 yfinance
 plotly
-streamlit
+streamlit==1.45.0
 apscheduler
 pytest
 python-dotenv
@@ -10,3 +10,4 @@ psycopg2-binary
 matplotlib
 requests
 streamlit-searchbox
+altair==5.5.0
