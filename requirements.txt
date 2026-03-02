@@ -1,12 +1,12 @@
 pandas
 sqlalchemy
+psycopg2-binary
 yfinance
 plotly
 streamlit==1.45.0
 apscheduler
 pytest
 python-dotenv
-psycopg2-binary
 matplotlib
 requests
 streamlit-searchbox
