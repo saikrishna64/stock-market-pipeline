@@ -37,7 +37,23 @@ init_db()
 
 @st.cache_data(ttl=300)
 def get_data():
-    return load_processed()
+    df = load_processed()
+    if df.empty:
+        # Auto-fetch on first run
+        from ingestion.fetcher import fetch_all_stocks
+        from processing.cleaner import clean
+        from processing.validator import validate
+        from processing.transformer import transform
+        from storage.db import save_raw, save_processed
+        raw = fetch_all_stocks()
+        if not raw.empty:
+            clean_df = clean(raw)
+            valid_df, _ = validate(clean_df)
+            processed_df = transform(valid_df)
+            save_raw(raw)
+            save_processed(processed_df)
+            return load_processed()
+    return df
 
 # ── Title ────────────────────────────────────────────────────
 st.title("📈 Stock Market Data Pipeline")
